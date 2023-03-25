@@ -1,0 +1,66 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter run -d chrome
+
+## exception
+
+FileSystemException: FileSystemException: writeFrom failed, path = 'C:\Users\robot\AppData\Local\Temp\flutter_tools.c16c7fed\flutter_tools.3363dbe9\web_entrypoint.dart' (OS Error: There is not enough space on the disk.
+, errno = 112)
+
+```
+#0      _RandomAccessFile.writeFromSync (dart:io/file_impl.dart:870:7)
+#1      _File.writeAsBytesSync (dart:io/file_impl.dart:606:14)
+#2      _File.writeAsStringSync (dart:io/file_impl.dart:628:5)
+#3      ForwardingFile.writeAsStringSync (package:file/src/forwarding/forwarding_file.dart:147:16)
+#4      ResidentWebRunner._generateEntrypoint (package:flutter_tools/src/isolated/resident_web_runner.dart:482:14)
+<asynchronous suspension>
+#5      ResidentWebRunner._updateDevFS (package:flutter_tools/src/isolated/resident_web_runner.dart:511:16)
+<asynchronous suspension>
+#6      ResidentWebRunner.run.<anonymous closure> (package:flutter_tools/src/isolated/resident_web_runner.dart:283:41)
+<asynchronous suspension>
+#7      asyncGuard.<anonymous closure> (package:flutter_tools/src/base/async_guard.dart:111:24)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 2.5.3, on Microsoft Windows [Version 10.0.19044.2728], locale en-US)
+    • Flutter version 2.5.3 at C:\src\flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision 18116933e7 (1 year, 5 months ago), 2021-10-15 10:46:35 -0700
+    • Engine revision d3ea636dc5
+    • Dart version 2.14.4
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 33.0.1)
+    • Android SDK at C:\Users\robot\AppData\Local\Android\sdk
+    • Platform android-33, build-tools 33.0.1
+    • Java binary at: D:\android\jre\bin\java
+    • Java version OpenJDK Runtime Environment (build 11.0.15+0-b2043.56-9505619)
+    • All Android licenses accepted.
+
+[✓] Chrome - develop for the web
+    • Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+
+[✓] Android Studio (version 2022.1)
+    • Android Studio at D:\android
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    • Java version OpenJDK Runtime Environment (build 11.0.15+0-b2043.56-9505619)
+
+[✓] VS Code (version 1.76.2)
+    • VS Code at C:\Users\robot\AppData\Local\Programs\Microsoft VS Code
+    • Flutter extension can be installed from:
+      🔨 https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter
+
+[✓] Connected device (2 available)
+    • Chrome (web) • chrome • web-javascript • Google Chrome 111.0.5563.111
+    • Edge (web)   • edge   • web-javascript • Microsoft Edge 111.0.1661.51
+
+• No issues found!
+```
